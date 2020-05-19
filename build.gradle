@@ -31,6 +31,7 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -40,7 +41,7 @@ dependencies {
     compile('com.h2database:h2')
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.session:spring-session-jdbc')
-    compile("org.mariadb.jdbc:mariadb-java-client")
+    compile("org.mariadb.jdbc:mariadb-java-client:2.2.1")
     compileOnly 'org.projectlombok:lombok:1.18.12'
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
 
