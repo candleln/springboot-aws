@@ -16,14 +16,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .headers().frameOptions().disable() //h2-console 화면을 사용하기 위해 해당 옵션들을 disable
-                .and()
+            .and()
                 .authorizeRequests() //URL 별 권한 관리를 설정하는 옵션의 시작
-                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll()
+                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
                 .antMatchers("/api/v1/**").hasRole(Role.USER.name()) //권한 관리 대상을 지정
                 .anyRequest().authenticated() //설정된 값들 이외 나머지 URL
-                .and()
+            .and()
                 .logout().logoutSuccessUrl("/")
-                .and()
+            .and()
                 .oauth2Login()
                 .userInfoEndpoint() //소셜 로그인 성공 시 후속 조치를 진행할 UserService 인터페이스의 구현체를 등록
                 .userService(customOAuth2UserService);
