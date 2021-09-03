@@ -1,4 +1,4 @@
-# springboot
+# springboot-aws
 
 개발 언어 : Java 8(JDK 1.8)
 
